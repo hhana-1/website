@@ -3,14 +3,15 @@
 Made with React, HTML, CSS, JavaScript, deployed with Vercel
 <br>
   ```   ___________________
-  /    Check it     \\
+  /    Check it     \
   |      out!       |
-  \\_________________/
-  \\
-   \\
- /\\_/\\  
+  \_________________/
+  \
+   \
+ /\_/\
 (=^◕ᴥ◕^=)
-/   ⌒   \\
-\ づ  づ```
+/   ⌒   \
+\ づ  づ ```
+<br>
 
 [Drems333](https://dreams333.com) 
