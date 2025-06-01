@@ -3,8 +3,8 @@
 Made with React, HTML, CSS, JavaScript, deployed with Vercel
 <br>
    ___________________
-  /[Check it out!](https://dreams333.com)\
-  |                 |
+  /    Check it     \
+  |      out!       |
   \_________________/
   \
    \
@@ -12,3 +12,4 @@ Made with React, HTML, CSS, JavaScript, deployed with Vercel
 (=^◕ᴥ◕^=)
 /   ⌒   \
 \ づ  づ
+[Drems333](https://dreams333.com) 
