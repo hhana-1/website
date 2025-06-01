@@ -1,0 +1,86 @@
+
+* {box-sizing: border-box;
+  margin:0; padding:0;
+  /* font-family:  Arial, Helvetica, sans-serif, sans-serif; */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  background-color: white;
+  color: hsl(0, 0%, 27%);
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  cursor: url('/vintage0cursor.svg'), auto;
+}
+
+a { cursor: url('/vintage0pointer.svg'), auto; }
+
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* Dark Mode */
+body.dark-mode {
+
+  background-color: hsl(264, 100%, 79%);
+  /* not bad but cute
+  background-color: hsl(220, 90%, 20%);
+  background-color: hsl(354, 67%, 44%); */
+
+
+/* winner color on pause
+
+  background-color: hsl(292, 81%, 64%); */
+
+
+  /* background-color: hsl(288, 69%, 31%); */
+  /* background-color: hsl(288, 83%, 45%);
+  */
+  /* background-color: hsl(271, 50%, 31%); */
+   /* another cute pink   background-color: hsl(323, 100%, 71%) */
+  /* good brown ngl   background-color: hsl(22, 81%, 13%); */
+  /* cute desaturated bitch  background-color: hsl(325, 18%, 57%); */
+  /* good pink color background-color: hsl(325, 83%, 45%); */
+  color: hsl(171, 80%, 88%);
+  /* color: hsl(0, 0%, 85%); */
+  /* box-shadow: 0px 0px 45px hsl(220, 90%, 20%) inset; */
+}
+h1 {
+  /* font-family: "Special Elite", system-ui; */
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Special Elite", system-ui;
+  text-align: center;
+  font-size:23px;
+  
+
+}
+@media (max-width: 768px){
+  .container01 {
+    padding: 0 20px;
+  }
+  h1{ margin-bottom: 30px;}
+}
+@media (min-width: 769px){
+  .container01 {
+    padding:0 45px;
+  }
+  h1{ margin-bottom: 60px;}
+}
+@media (min-width: 1224px){
+  .container01 {
+    padding:0 9vw;
+  }
+}
+
+.container01 {
+/* background-color: rgb(255, 255, 255); */
+margin: 32px 0;
+width:100vw;
+display: flex;
+flex-direction: column;
+
+}

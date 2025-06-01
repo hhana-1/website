@@ -1,0 +1,64 @@
+.theme-switcher {
+    width:50px;
+    border:2px solid black;
+    border-radius: 25px;
+    position: fixed;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 7px 0;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+    z-index: 300;
+  }
+  
+  .theme-button {
+    width:40px;
+    height:40px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s;
+    cursor: url('/vintage0pointer.svg'), pointer;
+  }
+  .dot-inside {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(231, 35, 35);
+    position: relative;
+  }
+  
+  .theme-button.light {
+
+    background-image: repeating-conic-gradient(#05790e 0% 25%, #5aff47 0% 50%);
+    background-position: 0 0, 10px 10px;
+    background-size: 7px 7px;
+    background-color: #5aff47;
+
+    color: black;
+    opacity: 0.7;
+  }
+  
+  .theme-button.dark {
+    background: rgb(82, 15, 238);
+    color: white;
+    opacity: 0.7;
+  }
+  
+  .theme-button.light.active {
+    /* background: hsl(52, 100%, 55%); */
+
+    color: white;
+    opacity: 1;
+  }
+  
+  .theme-button.dark.active {
+    box-shadow: none;
+    color: white;
+    opacity: 1;
+  }
+  

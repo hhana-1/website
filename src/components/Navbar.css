@@ -1,0 +1,179 @@
+@media (min-width: 769px){
+
+.navbar {
+    width: 100vw;
+    /* background-color: #33ddff; */
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    /* border:1px solid grey; */
+  }
+  
+  .navbar.light {
+    /* background-color: white; */
+    color: #313838;
+    /* box-shadow: 0px 10px 24px hsla(220, 90%, 20%, 0.575); */
+  }
+
+  .navbar.dark ul li a {
+    color: #e2e7e8;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 5.8vw;
+    margin: 35px 0;
+    padding: 0;
+    /* border:1px solid grey; */
+  }
+
+   .navbar ul li a {
+    color: #313838;
+    text-decoration: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 300;
+    /* font-family: "Special Elite", system-ui; */
+    font-family: "DM Sans", sans-serif;
+    position: relative;
+    cursor: url('/vintage0pointer.svg'), pointer;
+  }
+  
+  
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    position: relative; /* Needed for ::after positioning */
+  }
+  
+  a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    justify-content: center;
+    align-items:center;
+    width: 100%;
+    height: 2px;
+    margin-top:4px;
+    opacity: 1;
+    transform: scale(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .nav-links.light a::after {
+    background-color: #373737; 
+  }
+  .nav-links.dark a::after {
+    background-color: #e2e7e8; 
+  }
+
+  a:hover::after,
+  a:focus::after {
+    transform: scale(1);
+  }
+  
+  .menu-toggle {
+    display: none;
+  }
+}
+  /* mobile */
+  @media (max-width: 768px){
+
+  .menu-toggle {
+    display: block;
+    position:fixed;
+    right:10px;
+    top:10px;
+    width:50px;
+    height:50px;
+    font-size: 42px;
+    border:none;
+    background: none;
+    z-index: 1002;
+    cursor:pointer;
+  }
+
+  .menu-toggle .icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
+  
+  }
+
+  .fade-in {
+    opacity: 1;
+}
+
+  .fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  position:fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height:100%;
+  z-index: 1000;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+  
+
+}
+
+.nav-links.light {
+  background-color: #9c16d178; 
+  /*background-color: #bd1328;*/
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px); /* for Safari support */
+
+}
+.nav-links.dark {
+  /* background-color: #ffe01a; */
+  background-color: #0717249a;
+  backdrop-filter: blur(10px); 
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* When open, display it */
+.nav-links.open {
+  display: flex;
+}
+
+
+.navbar ul {
+  align-items: center;
+  list-style: none;
+  gap: 70px;
+  padding: 100px 0;
+
+}
+
+ .navbar ul li a {
+  color: #313838; 
+  text-decoration: none;
+  padding-bottom:20%;
+  font-size: 8vw;
+  font-weight: 300;
+  font-family: "DM Sans", sans-serif;
+  position: relative;
+}
+
+.navbar.light ul li a {
+  /* color: #e2e7e8; */
+  color: #3af8f8; 
+}
+
+.navbar.dark ul li a {
+  color: hsl(288, 83%, 45%);
+}
+  }
