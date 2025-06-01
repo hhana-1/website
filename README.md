@@ -1,6 +1,6 @@
 # Personal Portfolio Website
 
-Made with React, HTML, CSS, JavaScript, deployed with Vercel
+Made with React, HTML, CSS, JavaScript
 <br>
   ```   ___________________
   /    Check it     \
