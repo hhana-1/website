@@ -1,5 +1,8 @@
+import TextScroll from "../components/TextScroll";
+
 function Home() {
     return (
+      <div>
       <div className="container01">
       <div className="cherry-papa"
        style={{
@@ -15,8 +18,12 @@ function Home() {
           padding: "3% 0",
         }}
          />
+
          </div>
+        
       </div>
+       <TextScroll />
+       </div>
     );
   }
   
