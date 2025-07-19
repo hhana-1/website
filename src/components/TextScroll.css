@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "HanaWiggle";
+    src: url("../illu_typ/HanaWiggle-Regular.ttf");
+  }
+
+  @font-face {
+    font-family: "Manbow-reg";
+    src: url("../illu_typ/manbow-solid-regular.otf");
+  }
+  
+
+  .text-scroll-daddy {
+    font-family:'Manbow-reg', sans-serif;
+    font-weight: 600;
+    font-size: 7px;
+  }

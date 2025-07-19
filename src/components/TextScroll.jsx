@@ -2,47 +2,65 @@
 
 import { useRef, useEffect } from "react";
 import { useScroll } from "framer-motion";
+import "./TextScroll.css"; 
 
 export default function TextScroll() {
   const container = useRef(null);
 
+  const texts = useRef ([]);
+
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end end"],
+    offset: ["start 65%", "end 95%"],
   });
 
-  useEffect(() => {
-    if (!scrollYProgress) return;
 
-    const unsubscribe = scrollYProgress.on("change", (e) => {
-      console.log(e);
-    });
 
-    return () => unsubscribe();
-  }, [scrollYProgress]);
+
+useEffect ( () => {
+
+    scrollYProgress.on( 'change', e => {
+        texts.current.forEach ( (text, i) => {
+            text.setAttribute('startOffset', -43.5  + (i * 50) + (e *50 ) +"%" );
+
+        })
+    }
+    )
+
+
+} )
+
+
+
 
   return (
-    <div ref={container} className="text-scroll" style={{ border: "1px solid pink" }}>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 90 200 60">
+<div className="text-scroll-daddy" style= {{ width: "100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+<div ref={container} className="text-scroll" style={{ width:"50%"}}>
+      <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 66.999999 67" >
+        <g transform="translate(-77.935818,-90.55479)">
         <path
           id="curved-text"
-          d="M 2.6895596,135.24643 C 49.18052,178.6636 49.94816,97.34042 102.20326,97.592592 c 49.1888,0.237376 33.42739,82.607898 96.82415,35.348498"
+          d="m -91.99387,-123.36928 a 19.454018,19.454018 0 0 1 -20.11834,18.75675 19.454018,19.454018 0 0 1 -18.76617,-20.10956 19.454018,19.454018 0 0 1 20.10078,-18.77558 19.454018,19.454018 0 0 1 18.784979,20.09199"
+
+          transform="scale(-1)" 
           fill="none"
-          stroke="black"
+        // stroke='black'
           strokeWidth="0.264583"
-          strokeLinecap="butt"
-          strokeLinejoin="miter"
+     
           strokeOpacity="1"
         />
+ 
 
-        <text style={{ fontSize: "7px" }}>
-          {[...Array(3)].map((_, i) => (
-            <textPath key={i} href="#curved-text" startOffset={`${i * 40}%`}>
-              Wohooo I am texty
+        <text >
+          {[...Array(2)].map((_, i) => (
+            <textPath ref={ref => texts.current[i] = ref } key={i} href="#curved-text" startOffset={`${i * 50}%`}>
+           welcome 
             </textPath>
           ))}
         </text>
+        </g>
       </svg>
+  </div>
     </div>
   );
 }
