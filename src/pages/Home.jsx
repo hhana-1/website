@@ -1,8 +1,11 @@
 import TextScroll from "../components/TextScroll";
 
+import HeartGridOverlay from "../modals/HeartGridOverlay"; 
+
 function Home() {
     return (
       <div>
+        <HeartGridOverlay />
       <div className="container01">
   
         

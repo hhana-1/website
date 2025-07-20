@@ -1,0 +1,27 @@
+.heart-grid-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    /* z-index: 9999; */
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+  }
+  
+  .heart-row {
+    display: flex;
+    flex: 1;
+  }
+  
+  .heart-cell {
+    flex: 1;
+    font-size: 2.5vw;
+    text-align: center;
+    line-height: 1;
+    color: black;
+    font-family: sans-serif;
+  }
+  

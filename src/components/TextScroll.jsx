@@ -35,6 +35,7 @@ useEffect ( () => {
 
   return (
 <div className="text-scroll-daddy" style= {{ width: "100%", display:"flex", justifyContent:"center", alignItems:"center"}}>
+
 <div ref={container} className="text-scroll" style={{ width:"50%"}}>
       <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 66.999999 67" >
         <g transform="translate(-77.935818,-90.55479)">
@@ -43,18 +44,19 @@ useEffect ( () => {
           d="m -91.99387,-123.36928 a 19.454018,19.454018 0 0 1 -20.11834,18.75675 19.454018,19.454018 0 0 1 -18.76617,-20.10956 19.454018,19.454018 0 0 1 20.10078,-18.77558 19.454018,19.454018 0 0 1 18.784979,20.09199"
 
           transform="scale(-1)" 
-          fill="none"
+         
         // stroke='black'
+        fill='none'
           strokeWidth="0.264583"
      
           strokeOpacity="1"
         />
  
 
-        <text >
+        <text>
           {[...Array(2)].map((_, i) => (
             <textPath ref={ref => texts.current[i] = ref } key={i} href="#curved-text" startOffset={`${i * 50}%`}>
-           welcome 
+           welcome
             </textPath>
           ))}
         </text>
