@@ -10,9 +10,9 @@ function ProjectDetailModal({ project, onClose }) {
         </button>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
-        <a className='visit-project-link' href={project.link} target="_blank" rel="noopener noreferrer">
+        {/* <a className='visit-project-link' href={project.link} target="_blank" rel="noopener noreferrer">
           Visit the Project
-        </a>
+        </a> */}
       </div>
     </div>
   );
