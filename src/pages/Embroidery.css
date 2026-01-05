@@ -41,6 +41,15 @@
 
 }
 
+.mid-frame-svg
+{
+    fill:rgb(19, 76, 117);
+}
+.mid-frame-svg.dark
+{
+    fill:rgb(128, 0, 90);
+    display:flex;
+}
 .emb-cont-div.dark {
 
     border: 12px solid rgba(192, 201, 255, 0.327);

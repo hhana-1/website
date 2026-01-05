@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from "react";
 import "./Embroidery.css";
 import { useTheme } from "../context/ThemeContext";
 import Icon from "../FRAME2.svg";
+import MidFrame from "../components/MidFrame.jsx";
+
 function Embroidery() {
 
 const { theme } = useTheme();
@@ -28,7 +30,8 @@ const { theme } = useTheme();
       <div>
      <div className="emb-cont-div-cpy">
 
-<img src={Icon} alt="icon" />
+{/* <img src={Icon} alt="icon" /> */}
+   <MidFrame />
        
 
 
