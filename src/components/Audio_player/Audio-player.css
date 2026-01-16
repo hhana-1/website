@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400;500;600&display=swap");
+
+:root {
+  --main-color: #e617ea;
+  --dark-color: #e617ea;
+  --light-color: #292828;
+  --gray-color: #655e5e;
+  --whatever-color: #ce1072;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Gabarito", sans-serif;
+}
+
+
+/*minimize*/
+
+.player {
+  /* position: relative; */
+}
+.title-bar {
+  position: absolute;
+  top: -21px;
+  right: 0;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+}
+/* The Minimize Button Style */
+.minimize-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  height: 17px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 100;
+  cursor: pointer;
+  z-index: 100;
+  transition: all 0.2s ease;
+
+  line-height: 0;
+  background: rgba(230, 230, 230, 0.564);
+
+  border:#29282870 1.5px solid;
+
+}
+
+/* Hover effect for better UX */
+.minimize-btn:hover {
+  background:var(--main-color);
+  transform: scale(1.1);
+}
+.minimize-btn i{
+  font-size: 0.8rem;
+}
+.minimize-btn i:hover
+{
+  color: var(--light-color);
+}
+
+
+/* Styles for when the player is a "bar" */
+.player.minimized {
+  height: 40px;
+
+  max-width: 120px;
+  /* padding: 10px; */
+  /* display: block; */
+  display: flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius: 8px;
+}
+
+.mini-bar-content {
+  display: flex;
+  gap:12px;
+  width: 100%;
+  margin-bottom: 17px;
+
+}
+
+.mini-bar-content i 
+{
+  font-size: 1.2rem;
+  /* display: flex; */
+  cursor: pointer;
+}
+button {
+  border: none;
+  cursor: pointer;
+  outline-color: var(--dark-color);
+  background-color: transparent;
+  color: var(--dark-color);
+}
+
+button:active,
+button:hover {
+  color: var(--main-color);
+}
+
+input {
+  appearance: none;
+  background-color: var(--gray-color);
+  outline-color: var(--dark-color);
+  cursor: pointer;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* firefox */
+input::-moz-range-thumb {
+  appearance: none;
+  width: 0;
+  height: 0;
+  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--main-color);
+}
+
+/* webkit */
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0;
+  height: 0;
+  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--main-color);
+}
+
+.player {
+  --width: clamp(250px, 70vw, 250px); 
+  background-color: var(--light-color);
+  /* height: clamp(300px, 90vw, 180px);  */
+  width: 100%;
+  max-width: var(--width);
+  padding: 20px 20px 0 20px;
+  border-radius: 10px;
+  gap: 20px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  position: fixed;
+
+  transition: all 0.3s ease-in-out;
+  opacity: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+    right: 18px;
+  bottom: 20px;
+}
+
+/* .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  opacity: 100% important;
+  background-color: black;
+
+} */
+
+.header .bi {
+  font-size: 1.25rem;
+}
+
+.track-info {
+  text-align: left;
+  width: 100%;
+}
+
+
+.track-info .name {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--main-color);
+  margin-block: 0px 2px;
+}
+
+.track-info .artist {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.audio-n-volume-ctlr {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* flex-wrap: wrap; */
+  width: 107%;
+  margin-bottom: 17px;
+}
+
+/*seek bar*/
+.seek-bar-container {
+  display: flex;
+  align-items: center;
+  width: 120%;
+}
+.seek-bar {
+  height: 8px;
+  border-radius: 8px;
+  margin: 5px;
+}
+.current-time{
+  margin-left:1.2em;
+}
+.duration{
+  margin-right:1.2em;
+}
+
+.audio-n-volume-ctlr span {
+  user-select: none;
+}
+
+/*volume control*/
+.volume-control {
+  display: flex;
+  align-items: center;
+}
+.volume-icon {
+  font-size: 1.25rem;
+  margin-right: 0 5px 0 15px;
+  /* margin:25px; */
+}
+
+.volume-bar {
+  height: 5px;
+  border-radius: 6px;
+
+  width:66px;
+}
+
+.audio-controls {
+  display: flex;
+  gap:0.2em;
+}
+
+.audio-controls button {
+ 
+  font-size: 1.8rem;
+  line-height: 1;
+  display: flex;
+}
+.shuffle.active i {
+  color: var(--whatever-color);
+  }
+.shuffle i {
+  transition: color 0.2s ease;
+}
+.play-pause.paused .bi::before {
+  content: "\F4F2";
+}
+
+.play-pause:not(.paused) .bi::before {
+  content: "\F4C1";
+}

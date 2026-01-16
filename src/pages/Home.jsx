@@ -1,3 +1,5 @@
+import AudioPlayer from '../components/Audio_player/Audio-player.jsx';
+
 function Home() {
     return (
       <div className="container01">
@@ -7,6 +9,7 @@ function Home() {
         alignItems:'center',
         flexDirection:'column',
       }}>
+   
         <img src="/cherry_picture.png"
          style={{
           width: "min(48vw, 580px)",
@@ -15,7 +18,9 @@ function Home() {
           padding: "3% 0",
         }}
          />
+         
          </div>
+         <AudioPlayer />
       </div>
     );
   }
