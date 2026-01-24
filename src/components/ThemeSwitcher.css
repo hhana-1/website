@@ -20,7 +20,6 @@
     padding: 10px;
     border: none;
     border-radius: 50%;
-    cursor: pointer;
     transition: opacity 0.3s;
     cursor: url('/vintage0pointer.svg'), pointer;
   }

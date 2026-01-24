@@ -1,5 +1,3 @@
-import AudioPlayer from '../components/Audio_player/Audio-player.jsx';
-
 function Home() {
     return (
       <div className="container01">
@@ -18,9 +16,7 @@ function Home() {
           padding: "3% 0",
         }}
          />
-         
          </div>
-         <AudioPlayer />
       </div>
     );
   }

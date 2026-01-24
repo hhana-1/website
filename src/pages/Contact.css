@@ -8,6 +8,13 @@
     flex-direction: column;
 
 }
+.contact-text.dark {
+    color: hsl(124, 44%, 37%);
+}
+.contact-text.light {
+    /* color: hsl(171, 80%, 88%); */
+    color:blue;
+}
 
 .griddy-css {
 

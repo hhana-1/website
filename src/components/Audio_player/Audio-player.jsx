@@ -3,32 +3,34 @@ import "./Audio-player.css";
 import { useEffect, useRef, useState } from "react";
 import "./Audio-player.css";
 
-// example tracks (replace with your real ones)
+//tasks:
+//1 make content of player wait(timeout) to grow
+//until div of player grows (offset 2-3 sec)
+//so no elements jump around
+
+//2 make text of track's artists more visible on light bg
+
+//3 add onclick change of color of buttons play/pause/next
+//4 add animated fadeoud to sound icon when volume is changed
+
+//5 make smaller div when minimized
+
+//6 adjust for mobile screens by making player bigger for those chubby fingas
+
+//7 make pointer be vintage pointer
+//8 adjust color themes and introduce theme toggle
+//9 adjust color of theme changer so it is same gray as player div. 
+
 const tracks = [
   {
+    name: "Morenita",
+    artist: "Hugel feat. Cumbiafrica",
+    path: "/audio/Hugel_-_Morenita_-_feat._Cumbiafrica.mp3",
+  },
+   {
     name: "Push Thru",
     artist: "The Grey Room _ Golden Palms",
     path: "/audio/Push Thru - The Grey Room _ Golden Palms.mp3",
-  },
-  {
-    name: "Van Life Rager",
-    artist: "Everet Almond",
-    path: "/audio/Van Life Rager - Everet Almond.mp3",
-  },
-   {
-    name: "Van Life Rager",
-    artist: "Everet Almond",
-    path: "/audio/Van Life Rager - Everet Almond.mp3",
-  },
-   {
-    name: "Van Life Rager",
-    artist: "Everet Almond",
-    path: "/audio/Van Life Rager - Everet Almond.mp3",
-  },
-   {
-    name: "Van Life Rager",
-    artist: "Everet Almond",
-    path: "/audio/Van Life Rager - Everet Almond.mp3",
   },
    {
     name: "Van Life Rager",
@@ -49,9 +51,10 @@ function AudioPlayer() {
   const [prevVolume, setPrevVolume] = useState(25);
   const [currentTime, setCurrentTime] = useState("0:00");
   const [duration, setDuration] = useState("0:00");
-  const [showPlaylist, setShowPlaylist] = useState(false);
   const [isShuffle, setIsShuffle] = useState(false);
+  const { theme } = useTheme();
   
+
   // load track
   useEffect(() => {
     const audio = audioRef.current;
@@ -169,7 +172,7 @@ function AudioPlayer() {
   }
 };
 
-  return (
+  return ( 
       <div className={`player ${isMinimized ? "minimized" : ""}`}>
       {/* Top Right Minimize/Expand Button */}
       <div className="title-bar">
@@ -183,9 +186,9 @@ function AudioPlayer() {
   {!isMinimized ? (
         <>
     
-      <div className="track-info">
-        <h2 className="name">{tracks[activeTrack].name}</h2>
-        <h3 className="artist">{tracks[activeTrack].artist}</h3>
+      <div className={`track-info ${theme}`}>
+        <h2 className={`name ${theme}`}>{tracks[activeTrack].name}</h2>
+        <h3 className={`artist ${theme}`}>{tracks[activeTrack].artist}</h3>
        
       </div>
       <div className="seek-bar-container">
@@ -229,7 +232,7 @@ function AudioPlayer() {
         volume <= 35 ? 'bi-volume-down-fill'
         : 'bi-volume-up-fill'}`}
         onClick={toggleMute}
-        style={{cursor:'pointer'}}>
+        style={{cursor: "url('/vintage0pointer.svg'), auto"}}>
         </i>
         <input
           className="volume-bar"

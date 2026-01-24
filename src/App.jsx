@@ -9,6 +9,8 @@ import TypeIllu from "./pages/TypeIllu";
 import Header from "./components/Header";
 import { ThemeProvider } from "./context/ThemeContext";
 import ThemeSwitcher from "./components/ThemeSwitcher";
+import AudioPlayer from './components/Audio_player/Audio-player.jsx';
+
 
 function App() {
   return (
@@ -26,6 +28,7 @@ function App() {
         <Route path="/embroidery" element={<Embroidery />} />
       </Routes>
     </Router>
+      <AudioPlayer />
     </ ThemeProvider>
   );
 }

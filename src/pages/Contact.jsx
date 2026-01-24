@@ -1,10 +1,13 @@
 import "./Contact.css";
+import { useTheme } from "../context/ThemeContext";
+import { useViewTransitionState } from "react-router-dom";
 function ContactPage() {
   const socialLinks = [
     { name: "github", url: "https://github.com/hhana-1" },
     { name: "instagram", url: "https://www.instagram.com/hanahulic/" },
     { name: "behance", url: "https://www.behance.net/hhana1a728" },
   ];
+  const { theme } = useTheme();
   return (
     <div className="container01">
        <h1>Contact</h1>
@@ -20,8 +23,8 @@ function ContactPage() {
         }} 
     />
       <div className='contact-right'>
-  <div className='contact-text'>
-    <p> Hello HELLO.
+  <div className={`contact-text ${theme}`}>
+    <p > Hello HELLO.
       Thank you for showing interest in my work.
       This here is me. Hana Hulic. The best way to contact me is by email.
       I've been everywhere and done everything. I also developed this website.

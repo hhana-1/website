@@ -6,7 +6,7 @@ export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => localStorage.getItem("theme") || "light");
 
   useEffect(() => {
-    document.body.classList.toggle("dark-mode", theme === "dark");
+    document.body.classList.toggle("bodyly", theme === "dark");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
