@@ -52,7 +52,8 @@ function AudioPlayer() {
   const [currentTime, setCurrentTime] = useState("0:00");
   const [duration, setDuration] = useState("0:00");
   const [isShuffle, setIsShuffle] = useState(false);
-  const { theme } = useTheme();
+  const { theme } =
+   useTheme();
   
 
   // load track

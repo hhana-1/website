@@ -22,50 +22,6 @@ button { cursor: url('/vintage0pointer.svg'), auto; }
   font-weight: 500;
 }
 
-.bodyly.dark {
-  background-color: hsl(264, 100%, 79%);
-}
-.bodyly.light {
-  background-color: hsl(0, 0%, 100%);
-}
-
-/* .bodily .dark {
-  background-color: hsl(264, 100%, 79%);
-}
-.bodily .light {
-  background-color: hsl(0, 0%, 100%);
-} */
-/* Dark Mode */
-/* .bodyly.dark-mode {
-
-  background-color: hsl(264, 100%, 79%); */
-  /* not bad but cute
-  background-color: hsl(220, 90%, 20%);
-  background-color: hsl(354, 67%, 44%); */
-
-
-/* winner color on pause
-
-  background-color: hsl(292, 81%, 64%); */
-
-
-  /* background-color: hsl(288, 69%, 31%); */
-  /* background-color: hsl(288, 83%, 45%);
-  */
-  /* background-color: hsl(271, 50%, 31%); */
-   /* another cute pink   background-color: hsl(323, 100%, 71%) */
-  /* good brown ngl   background-color: hsl(22, 81%, 13%); */
-  /* cute desaturated bitch  background-color: hsl(325, 18%, 57%); */
-  /* good pink color background-color: hsl(325, 83%, 45%); */
-
-
-  /* //cheap way to add color - needs fix */
-
-
-  /* color: hsl(171, 80%, 88%); */
-
-
-/* } */
 h1 {
   /* font-family: "Special Elite", system-ui; */
   /* font-family: "Quicksand", sans-serif; */
@@ -91,6 +47,14 @@ h1 {
   .container01 {
     padding:0 9vw;
   }
+}
+
+.page .dark
+{
+ height: 100%;
+ width:100%;
+ background-color: #b5e212;
+ z-index: -1;
 }
 
 .container01 {

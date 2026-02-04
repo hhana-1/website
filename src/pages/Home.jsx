@@ -1,4 +1,10 @@
+import { useTheme } from "../context/ThemeContext";
+import "../App.css";
+import "../index.css";
+import "./Home.css";
+
 function Home() {
+  const { theme } = useTheme();
     return (
       <div className="container01">
       <div className="cherry-papa"
