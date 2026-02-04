@@ -1,17 +1,73 @@
 .theme-switcher {
-    width:50px;
-    border:2px solid black;
-    border-radius: 25px;
+    width:55px;
+    border-radius: 35px;
     position: fixed;
     right: 10px;
+    top: 150px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
     padding: 7px 0;
     align-items: center;
     justify-content: space-around;
     background-color: aliceblue;
     z-index: 300;
+    opacity: 90%;
+    padding:10px 0;
+  }
+
+  @keyframes sliderOpacity {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    5% {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+  
+    95% {
+      opacity: 1;
+      transform: scale(0.9);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .theme-switcher.light {
+    background-color: #292828;
+  }
+
+  .theme-switcher.dark {
+    background-color: #292828;
+  }
+
+  .theme-slider {
+    position: absolute;
+    width: 47px;
+    height: 47px;
+    border-radius: 50%;
+    background-color: rgba(185, 185, 185, 0.861);
+    transition: top 0.4s ease-out, background-color 0.8s ease-out, opacity 0.8s ease-out;
+    z-index: -1;
+    /* filter: blur(1px); */
+  }
+
+  .theme-slider.light {
+    top: 7px;
+    /* background-color:rgb(230, 249, 105); */
+        background-color: rgb(88, 88, 88);
+    opacity: 1;
+    /* border: 3px solid  rgba(21, 158, 0, 0.929); */
+  }
+
+  .theme-slider.dark {
+    top: 59px;
+    background-color: rgba(88, 88, 88);
+    opacity: 1;
+    /* border: 3px solid  rgba(167, 74, 218, 0.929); */
   }
   
   .theme-button {
@@ -37,6 +93,106 @@
     background-position: 0 0, 10px 10px;
     background-size: 7px 7px;
     background-color: #5aff47;
+    border: 2px solid #c0ffb3;
+    color: black;
+    opacity: 0.7;
+  }
+  
+  .theme-button.dark {
+    background: rgb(82, 15, 238);
+    border: 2px solid #d1b3ff;
+    color: white;
+    opacity: 0.7;
+  }
+  
+  .theme-button.light.active {
+    /* background: hsl(52, 100%, 55%); */
+
+    color: white;
+    opacity: 1;
+    cursor: url('/vintage0cursor.svg'), auto;
+  }
+  
+  .theme-button.dark.active {
+    box-shadow: none;
+    color: white;
+    opacity: 1;
+    cursor: url('/vintage0cursor.svg'), auto;
+  }
+  
+
+  /* @media (min-width: 769px){
+
+
+.theme-switcher {
+    width:39px;
+    border:2px solid black;
+    border-radius: 19.5px;
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 7.8px;
+    padding: 5.5px 0;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+    z-index: 300;
+  }
+
+  .theme-switcher.light {
+    background-color: #d3d3d3;
+  }
+
+  .theme-switcher.dark {
+    background-color: #ffb6c1;
+  }
+
+  .theme-slider {
+    position: absolute;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.674);
+    transition: top 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    z-index: -1;
+    filter: blur(1px);
+  }
+
+  .theme-slider.light {
+    top: 5.5px;
+    background-color: rgb(255, 105, 180);
+  }
+
+  .theme-slider.dark {
+    top: 43.7px;
+    background-color: rgb(51, 225, 234);
+  }
+  
+  .theme-button {
+    width:31.2px;
+    height:31.2px;
+    padding: 7.8px;
+    border: none;
+    border-radius: 50%;
+    transition: opacity 0.3s;
+    cursor: url('/vintage0pointer.svg'), pointer;
+  }
+  .dot-inside {
+    width: 15.6px;
+    height: 15.6px;
+    border-radius: 50%;
+    background-color: rgb(231, 35, 35);
+    position: relative;
+  }
+  
+  .theme-button.light {
+
+    background-image: repeating-conic-gradient(#05790e 0% 25%, #5aff47 0% 50%);
+    background-position: 0 0, 10px 10px;
+    background-size: 7px 7px;
+    background-color: #5aff47;
 
     color: black;
     opacity: 0.7;
@@ -49,15 +205,15 @@
   }
   
   .theme-button.light.active {
-    /* background: hsl(52, 100%, 55%); */
-
     color: white;
     opacity: 1;
+    cursor: url('/vintage0cursor.svg'), auto;
   }
   
   .theme-button.dark.active {
     box-shadow: none;
     color: white;
     opacity: 1;
+    cursor: url('/vintage0cursor.svg'), auto;
   }
-  
+  } */

@@ -20,7 +20,11 @@
 }
 
 .app-wrapper.dark {
-  background-color: #1a1a1a;
+  background-color: #9310d4;
   color: #e2e7e8;
 }
 
+.app-wrapper.new {
+  background-color: #1a1a1a;
+  color: #e2e7e8;
+}

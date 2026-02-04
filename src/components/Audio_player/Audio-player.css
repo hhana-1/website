@@ -20,9 +20,6 @@ a, button {
 }
 /*minimize*/
 
-.player {
-  /* position: relative; */
-}
 .title-bar {
   position: absolute;
   top: -21px;
