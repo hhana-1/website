@@ -22,9 +22,9 @@ a, button {
 
 .title-bar {
   position: absolute;
-  top: -21px;
-  right: 0;
-  width: 100%;
+  top: 5px;
+  right: 5px;
+  width: auto;
   background: transparent;
   display: flex;
   justify-content: flex-end;
@@ -149,6 +149,20 @@ input::-webkit-slider-thumb {
   align-items: center;
     right: 18px;
   bottom: 20px;
+}
+
+.player > * {
+  opacity: 0;
+  animation: fadeIn 0.6s ease-out 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* .header {

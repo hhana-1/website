@@ -9,11 +9,10 @@
 
 }
 .contact-text.dark {
-    color: hsl(124, 44%, 37%);
+    /* color: hsl(124, 44%, 37%); */
 }
 .contact-text.light {
     /* color: hsl(171, 80%, 88%); */
-    color:blue;
 }
 
 .griddy-css {
@@ -56,9 +55,9 @@ width: 100%;
 
 .contact-text {
     margin-top:20px;
-    font-family: "DM Sans", sans-serif;
-    font-size: 20px;
-    font-weight: 400;
+    /* font-family: "DM Sans", sans-serif;*/
+    /* font-size: 20px;  */
+ 
 }
 
 

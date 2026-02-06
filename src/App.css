@@ -16,11 +16,11 @@
 
 .app-wrapper.light {
   background-color: #ffffff;
-  color: #313838;
+
 }
 
 .app-wrapper.dark {
-  background-color: #9310d4;
+  background-color: #bf94ff;
   color: #e2e7e8;
 }
 
@@ -28,3 +28,9 @@
   background-color: #1a1a1a;
   color: #e2e7e8;
 }
+
+.theme-switcher {
+  bottom: 190px !important;
+  top: auto !important;
+}
+

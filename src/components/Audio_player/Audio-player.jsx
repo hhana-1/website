@@ -13,11 +13,11 @@ import "./Audio-player.css";
 //3 add onclick change of color of buttons play/pause/next
 //4 add animated fadeoud to sound icon when volume is changed
 
-//5 make smaller div when minimized
+
 
 //6 adjust for mobile screens by making player bigger for those chubby fingas
 
-//7 make pointer be vintage pointer
+
 //8 adjust color themes and introduce theme toggle
 //9 adjust color of theme changer so it is same gray as player div. 
 

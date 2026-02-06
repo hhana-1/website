@@ -1,15 +1,14 @@
 @media (min-width: 769px){
 
 .navbar {
-    width: 100vw;
+    width: auto;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
     /* border:1px solid grey; */
   }
   
   .navbar.light {
-    color: #313838;
     /* box-shadow: 0px 10px 24px hsla(220, 90%, 20%, 0.575); */
   }
 /* 
@@ -20,28 +19,28 @@
   .navbar ul {
     list-style: none;
     display: flex;
-    gap: 5.8vw;
-    margin: 35px 0;
+    gap: 3vw;
+    margin: 0;
     padding: 0;
     /* border:1px solid grey; */
   }
 
    .navbar ul li a {
-    color: #313838;
     text-decoration: none;
     padding: 8px 12px;
-    font-size: 16px;
-    font-weight: 300;
+    font-size: 14px;
+    font-weight: 400;
     /* font-family: "Special Elite", system-ui; */
     font-family: "DM Sans", sans-serif;
     position: relative;
     cursor: url('/vintage0pointer.svg'), pointer;
   }
   
-  
+  .navbar ul li a:visited {
+    color: inherit;
+  }
 
   a {
-    color: inherit;
     text-decoration: none;
     position: relative; /* Needed for ::after positioning */
   }
@@ -59,9 +58,6 @@
     transform: scale(0);
     transform-origin: center;
     transition: transform 0.3s ease;
-  }
-  .nav-links.light a::after {
-    background-color: #373737; 
   }
 
   a:hover::after,
@@ -157,6 +153,10 @@
   font-weight: 300;
   font-family: "DM Sans", sans-serif;
   position: relative;
+}
+
+.navbar ul li a:visited {
+  color: inherit;
 }
 
 .navbar.light ul li a {

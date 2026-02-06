@@ -5,11 +5,18 @@ function Header() {
   const { theme } = useTheme();
   const navigate = useNavigate();
   const isMobile = window.matchMedia("(max-width: 768px)").matches;
+  const isLargeScreen = window.matchMedia("(min-width: 1200px)").matches;
+
+  const getLogoWidth = () => {
+    if (isMobile) return "min(50vw, 300px)";
+    if (isLargeScreen) return "min(22vw, 220px)";
+    return "min(28vw, 260px)";
+  };
 
   return (
     <div style={{ display: "flex",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     marginTop: isMobile ? "15px" : "0px",
     }}>
       <img
@@ -17,7 +24,7 @@ function Header() {
         alt="Logo"
         onClick={()=> navigate("/")}
         style={{
-          width: "min(68vw, 580px)",
+          width: getLogoWidth(),
           minWidth: "100px",
           height: "auto",
           padding: "3% 0",
