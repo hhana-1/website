@@ -34,3 +34,25 @@
   top: auto !important;
 }
 
+.header-navbar-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 769px) {
+  .header-navbar-wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .header-navbar-wrapper.light {
+    background-color: white;
+  }
+  
+  .header-navbar-wrapper.dark {
+    background-color: rgba(255, 0, 255, 0.824);
+  }
+}
+

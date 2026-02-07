@@ -57,7 +57,7 @@ function AppContent() {
   return (
     <div className={`app-wrapper ${theme}`}>
       <Router>
-        <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+        <div className={`header-navbar-wrapper ${theme}`}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', width: '100%', maxWidth: '1400px', padding: '20px 5vw' }}>
             <Header />
             <Navbar />
