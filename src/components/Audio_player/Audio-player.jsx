@@ -45,7 +45,7 @@ const tracks = [
   {
     name: "Starships",
     artist: "Nicki Minaj",
-    path: "/audio/Starships_-_Nicki_Minaj",
+    path: "/audio/Starships_-_Nicki_Minaj.mp3",
   },
   {
     name: "Discoproof",
