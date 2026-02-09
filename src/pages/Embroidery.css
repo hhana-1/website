@@ -36,9 +36,10 @@
     width:80vw;
     max-width: 1300px;
     z-index: 1;
+    padding:50px;
 }
 
-.mid-frame-svg
+/* .mid-frame-svg
 {
     fill:rgb(19, 76, 117);
     width: 100%;
@@ -51,12 +52,12 @@
 {
     fill:rgba(10, 185, 198, 0.826);
     display:flex;
-}
+} */
 
 
 
 
-
+/* 
 @keyframes rock {
     0%   { transform: rotate(0deg); }
     25%  { transform: rotate(25deg); }
@@ -71,7 +72,7 @@
     50%  { transform: rotate(25deg); }
     75%  { transform: rotate(0deg); }
     100% { transform: rotate(25deg); }
-  }
+  } */
 
   .emb-text1{
     position:relative;
@@ -85,6 +86,7 @@
     flex-direction: column;
     /* border:1px solid grey; */
     align-items:center;
+    gap: 60px;
 } 
   
 @media (max-width: 768px){
@@ -110,8 +112,9 @@
         transform-origin: center; 
         width:80px;
         height:80px;
-margin:30px;
+        margin:30px;
         position:relative;
+        transform: rotate(25deg);
     }
 
 /* .flower-on-top {
