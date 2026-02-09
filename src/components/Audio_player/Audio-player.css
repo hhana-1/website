@@ -6,6 +6,27 @@
   --light-color: #292828;
   --gray-color: #655e5e;
   --whatever-color: #ce1072;
+  --player-bg: var(--light-color);
+}
+
+body.dark .player {
+  --audio-button-color: rgb(113, 111, 50);
+  --audio-button-hover-color: rgb(136, 90, 206);
+  --audio-range-track: rgba(30, 241, 234, 0.304);
+  --audio-range-progress: #e617ea;
+  --minimize-btn-bg: #292828;
+  --minimize-btn-icon: rgb(255, 255, 255);
+  --player-bg: #bf94ff;
+}
+
+body.light .player {
+  --audio-button-color: rgba(255, 255, 255, 0.374);
+  --audio-button-hover-color: rgb(207, 207, 207);
+  --audio-range-track: rgba(255, 255, 255, 0.795);
+  --audio-range-progress: rgba(46, 168, 103, 0.692);
+  --minimize-btn-bg: rgba(222, 240, 231, 0.249);
+  --minimize-btn-icon: var(--audio-button-color);
+  --player-bg: var(--light-color);
 }
 
 * {
@@ -38,13 +59,14 @@ a, button {
   justify-content: center;
   width: 20px;
   height: 20px;
+  padding: 2px;
   border: none;
   border-radius: 50%;
   z-index: 100;
   z-index: 100;
   transition: all 0.2s ease;
-  line-height: 0;
-  background: rgb(230, 230, 230);
+
+  background: var(--minimize-btn-bg);
 
   /* border:#78787870 1.5px solid; */
 
@@ -54,35 +76,76 @@ a, button {
 .minimize-btn:hover {
   background:var(--light-color);
   transform: scale(1.1);
+  border:1px solid var(--minimize-btn-bg);
 }
 .minimize-btn i{
-  font-size: 0.8rem;
+  font-size: 0.5rem;
+  color: var(--minimize-btn-icon);
 }
-.minimize-btn i:hover
+/* .minimize-btn i:hover
 {
   color: var(--gray-color);
-}
+} */
 
 
 /* Styles for when the player is a "bar" */
 .player.minimized {
-  height: 40px;
-
-  max-width: 120px;
-  /* padding: 10px; */
-  /* display: block; */
+  height: auto;
+  width: auto;
+  max-width: none;
+  padding: 10px 16px;
   display: flex;
-  align-items:center;
-  justify-content:center;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 8px;
+  border-radius: 999px;
+  background-color: var(--player-bg);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  /* opacity: 90%; */
+  transform-origin: bottom right;
+  animation: shrinkIn 0.28s ease-in-out;
+  --minimize-btn-bg: rgba(255, 255, 255, 0.6);
+}
+
+body.light .player.minimized {
+  --minimize-btn-bg: #292828;
+  --minimize-btn-icon: rgba(255, 0, 255, 1);
+}
+
+body.dark .player.minimized {
+  --minimize-btn-bg: #292828;
+  --minimize-btn-icon: var(--audio-button-color);
+}
+
+.player.minimized .title-bar {
+  top: -32px;
+  right: 0;
+  transform: none;
+}
+
+.player.minimized .minimize-btn {
+  background: var(--minimize-btn-bg);
+  width: 24px;
+  height: 24px;
+}
+
+.player.minimized .minimize-btn i {
+  font-size: 0.6rem;
 }
 
 .mini-bar-content {
   display: flex;
-  gap:12px;
-  width: 100%;
-  margin-bottom: 17px;
+  gap:6px;
+  width: auto;
+  margin: 0;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  transform: scale(1.3);
+  transform-origin: center;
 
 }
 
@@ -104,9 +167,23 @@ button:hover {
   color: var(--main-color);
 }
 
+.player .audio-controls button,
+.player .mini-bar-content button,
+.player .volume-icon {
+  color: var(--audio-button-color);
+}
+
+.player .audio-controls button:hover,
+.player .mini-bar-content button:hover,
+.player .volume-icon:hover,
+.player .audio-controls button:active,
+.player .mini-bar-content button:active {
+  color: var(--audio-button-hover-color);
+}
+
 input {
   appearance: none;
-  background-color: var(--gray-color);
+  background-color: var(--audio-range-track);
   outline-color: var(--dark-color);
  cursor: url('/vintage0pointer.svg'), auto;
   overflow: hidden;
@@ -118,7 +195,7 @@ input::-moz-range-thumb {
   appearance: none;
   width: 0;
   height: 0;
-  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--main-color);
+  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--audio-range-progress);
 }
 
 /* webkit */
@@ -127,12 +204,12 @@ input::-webkit-slider-thumb {
   appearance: none;
   width: 0;
   height: 0;
-  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--main-color);
+  box-shadow: calc(-1 * var(--width)) 0 0 var(--width) var(--audio-range-progress);
 }
 
-.player {
+.full-player-content {
   --width: clamp(250px, 70vw, 250px); 
-  background-color: var(--light-color);
+  background-color: var(--player-bg);
   /* height: clamp(300px, 90vw, 180px);  */
   width: 100%;
   max-width: var(--width);
@@ -142,16 +219,18 @@ input::-webkit-slider-thumb {
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
   position: fixed;
   transition: all 0.3s ease-in-out;
-  opacity: 90%;
+  /* opacity: 90%; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-    right: 18px;
+    right: 10px;
   bottom: 20px;
+  transform-origin: bottom right;
+  animation: expandIn 0.3s ease-in-out;
 }
 
-.player > * {
+.full-player-content > * {
   opacity: 0;
   animation: fadeIn 0.6s ease-out 0.3s forwards;
 }
@@ -162,6 +241,28 @@ input::-webkit-slider-thumb {
   }
   to {
     opacity: 1;
+  }
+}
+
+@keyframes shrinkIn {
+  from {
+    opacity: 0;
+    transform: scale(1.03);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 0.9;
+    transform: scale(1);
   }
 }
 
@@ -199,19 +300,21 @@ input::-webkit-slider-thumb {
   font-weight: 200;
 }
 
-.artist.dark, .name.dark {
-    color: rgb(138, 174, 197);
+.name.dark {
+    color: rgba(255, 255, 255, 0.637);
+}
+.artist.dark {
+    color: rgba(255, 255, 255, 0.32);
 }
 
-.artist.light, .name.light {
-    color: rgb(177, 83, 124);
+.name.light {
+    color:rgb(255, 255, 255);
+}
+.artist.light {
+     color:rgba(243, 243, 243, 0.777);
 }
 
 
-.name .light{
-    color: purple !important;
-
-}
 
 .track-info .artist {
   font-size: 0.9rem;
@@ -241,10 +344,22 @@ input::-webkit-slider-thumb {
 .current-time{
   margin-left:1.2em;
   user-select:none;
+  color: #ffffff;
+  font-size: 0.9rem;
+}
+
+body.dark .seek-bar:hover {
+  box-shadow: 0 0 3px rgb(255, 0, 195);
+}
+
+body.light .seek-bar:hover {
+  box-shadow: 0 0 3px greenyellow;
 }
 .duration{
   margin-right:1.2em;
   user-select:none;
+  color: #ffffff;
+  font-size: 0.9rem;
 }
 
 .audio-n-volume-ctlr span {
@@ -265,10 +380,15 @@ input::-webkit-slider-thumb {
 .volume-bar {
   height: 5px;
   border-radius: 6px;
-
   width:66px;
 }
+body.dark .volume-bar:hover {
+  box-shadow: 0 0 3px rgb(255, 0, 195);
+}
 
+body.light .volume-bar:hover {
+  box-shadow: 0 0 3px greenyellow;
+}
 .audio-controls {
   display: flex;
   gap:0.2em;
@@ -281,7 +401,7 @@ input::-webkit-slider-thumb {
   display: flex;
 }
 .shuffle.active i {
-  color: var(--whatever-color);
+  color: var(--audio-button-hover-color);
   }
 .shuffle i {
   transition: color 0.2s ease;

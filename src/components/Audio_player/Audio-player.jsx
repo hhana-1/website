@@ -175,17 +175,17 @@ function AudioPlayer() {
 
   return ( 
       <div className={`player ${isMinimized ? "minimized" : ""}`}>
-      {/* Top Right Minimize/Expand Button */}
-      <div className="title-bar">
-  <button 
-        className="minimize-btn" 
-        onClick={() => setIsMinimized(!isMinimized)}
-      >
-        <i className={`bi ${isMinimized ? "bi-window-fullscreen" : "bi-dash-lg"}`}></i>
-      </button>
-      </div>
   {!isMinimized ? (
-        <>
+        <div className="full-player-content">
+          {/* Top Right Minimize/Expand Button */}
+          <div className="title-bar">
+            <button 
+              className="minimize-btn" 
+              onClick={() => setIsMinimized(!isMinimized)}
+            >
+              <i className={`bi ${isMinimized ? "bi-window-fullscreen" : "bi-dash-lg"}`}></i>
+            </button>
+          </div>
     
       <div className={`track-info ${theme}`}>
         <h2 className={`name ${theme}`}>{tracks[activeTrack].name}</h2>
@@ -246,10 +246,19 @@ function AudioPlayer() {
         />
  </div>
       </div>
-      </>
+      </div>
   ): (
         /* Minimized Bar State */
         <div className="mini-bar-content">
+          {/* Top Right Minimize/Expand Button */}
+          <div className="title-bar">
+            <button 
+              className="minimize-btn" 
+              onClick={() => setIsMinimized(!isMinimized)}
+            >
+              <i className={`bi ${isMinimized ? "bi-window-fullscreen" : "bi-dash-lg"}`}></i>
+            </button>
+          </div>
               
         <button className="prev" onClick={prevTrack}>
           <i className="bi bi-skip-start-fill"></i>
