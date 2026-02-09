@@ -23,6 +23,36 @@ import "./Audio-player.css";
 
 const tracks = [
   {
+    name: "Pick You Up",
+    artist: "Shaznay Lewis. feat. Self Esteem",
+    path: "/audio/Pick_You_Up_(feat._Self Esteem).mp3",
+  },
+  {
+    name: "places to be",
+    artist: "Anderson .Paak, Chika, and Fred Again",
+    path: "/audio/Fred_again.._&_Anderson_.Paak_-_places_to_be_feat._Chika.mp3",
+  },
+  {
+    name: "Looking at Your Pager",
+    artist: "KH",
+    path: "/audio/KH_-_Looking_at_Your_Pager.mp3",
+  },
+  {
+    name: "Lush Life",
+    artist: "Zara Larsson",
+    path: "/audio/Zara_Larsson_-_Lush_Life.mp3",
+  },
+  {
+    name: "Starships",
+    artist: "Nicki Minaj",
+    path: "/audio/Starships_-_Nicki_Minaj",
+  },
+  {
+    name: "Discoproof",
+    artist: "La Roux X Chromeo",
+    path: "/audio/La_Roux_X_Chromeo_-_Discoproof.mp3",
+  },
+  {
     name: "Morenita",
     artist: "Hugel feat. Cumbiafrica",
     path: "/audio/Hugel_-_Morenita_-_feat._Cumbiafrica.mp3",
@@ -47,8 +77,8 @@ function AudioPlayer() {
   const [initPlay, setInitPlay] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [seek, setSeek] = useState(0);
-  const [volume, setVolume] = useState(25);
-  const [prevVolume, setPrevVolume] = useState(25);
+  const [volume, setVolume] = useState(4);
+  const [prevVolume, setPrevVolume] = useState(4);
   const [currentTime, setCurrentTime] = useState("0:00");
   const [duration, setDuration] = useState("0:00");
   const [isShuffle, setIsShuffle] = useState(false);

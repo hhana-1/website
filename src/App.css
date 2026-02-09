@@ -30,15 +30,15 @@
 }
 
 .theme-switcher {
-  bottom: 190px !important;
+  bottom: 210px !important;
   top: auto !important;
 }
 
 .header-navbar-wrapper {
   width: 100%;
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   padding-top: 6px;
   min-height: 120px;
 }
