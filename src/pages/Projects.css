@@ -95,6 +95,8 @@ cursor: url('/vintage0pointer.svg'), auto;}
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
+  z-index: 1002;
+  overflow: hidden;
 }
 
 .close-modal {
@@ -111,11 +113,25 @@ cursor: url('/vintage0pointer.svg'), auto;}
 .modal > h3 {
   margin-bottom:20px;
 }
-  .visit-project-link, .view-project-link  {
-    font-weight: 500;
 
-    padding-top: 10px;
-    text-decoration: none;
-    color:rgb(220, 60, 226);
-    /* font-family: "Quicksand", sans-serif;  */
+.visit-project-link, .view-project-link  {
+  font-weight: 500;
+  padding-top: 10px;
+  text-decoration: none;
+  color:rgb(220, 60, 226);
+  /* font-family: "Quicksand", sans-serif;  */
+}
+
+
+.modal-project-image{
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  align-self: center;
+  width: 100%;
+  max-width: 23em;
+  margin-bottom:20px;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
 }

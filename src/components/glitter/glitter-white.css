@@ -1,0 +1,78 @@
+.glitter-layer-white {
+  position: fixed;
+  inset: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 1001;
+  opacity: 1;
+  transition: opacity 0.45s ease-in-out;
+}
+
+.glitter-layer-white.is-fading {
+  opacity: 0;
+}
+
+.glitter-star-white {
+  position: absolute;
+  display: block;
+  overflow: visible;
+  animation: glitterPulseWhite 2.6s cubic-bezier(0.42, 0, 0.2, 1) infinite;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.82));
+}
+
+.glitter-star-white::before,
+.glitter-star-white::after {
+  content: "";
+  inset: 0;
+  position: absolute;
+  background: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0.72) 45%,
+    #ffffff 100%
+  );
+  clip-path: polygon(
+    50% 0%,
+    62% 38%,
+    100% 50%,
+    62% 62%,
+    50% 100%,
+    38% 62%,
+    0% 50%,
+    38% 38%
+  );
+}
+
+.glitter-star-white::after {
+  transform: scale(0.58);
+  opacity: 0.95;
+}
+
+@keyframes glitterPulseWhite {
+  0% {
+    transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0;
+  }
+  16% {
+    transform: translate(-50%, -50%) scale(1.18);
+    opacity: 1;
+  }
+  33% {
+    transform: translate(-50%, -50%) scale(0.72);
+    opacity: 0.2;
+  }
+  52% {
+    transform: translate(-50%, -50%) scale(1.08);
+    opacity: 0.95;
+  }
+  72% {
+    transform: translate(-50%, -50%) scale(0.76);
+    opacity: 0.18;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(0.55);
+    opacity: 0;
+  }
+}
