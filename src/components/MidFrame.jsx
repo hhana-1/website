@@ -42,10 +42,10 @@ export default MidFrame;
 // const MidFrame = () => {
 // const { theme } = useTheme();
 // //   const colorMap = {
-// //     dark: "#dc3ce2",
-// //     light: "#d650ffff",
+// //     party: "#dc3ce2",
+// //     cherry: "#d650ffff",
 // //   };
-// //   const color = colorMap[theme] || colorMap.light;
+// //   const color = colorMap[theme] || colorMap.cherry;
 
 //   const [screenSize, setScreenSize] = useState(window.innerWidth);
 
@@ -89,10 +89,10 @@ export default MidFrame;
 // const MidFrame = () => {
 //   const { theme } = useTheme();
 //   const colorMap = {
-//     dark: "#dc3ce2",
-//     light: "#d650ffff",
+//     party: "#dc3ce2",
+//     cherry: "#d650ffff",
 //   };
-//   const color = colorMap[theme] || colorMap.light;
+//   const color = colorMap[theme] || colorMap.cherry;
 
 //   const [screenSize, setScreenSize] = useState(window.innerWidth);
 
@@ -134,12 +134,12 @@ export default MidFrame;
 //   const { theme } = useTheme();
 
 //   const colorMap = {
-//     dark: "#dc3ce2",
+//     party: "#dc3ce2",
 //     blue: "#6b4eff",
-//     light: "#ff7f50",
+//     cherry: "#ff7f50",
 //   };
 
-//   const color = colorMap[theme] || colorMap.light;
+//   const color = colorMap[theme] || colorMap.cherry;
 
 //   const [screenSize, setScreenSize] = useState(window.innerWidth);
 

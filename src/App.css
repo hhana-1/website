@@ -14,12 +14,12 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-.app-wrapper.light {
+.app-wrapper.cherry {
   background-color: #ffffff;
 
 }
 
-.app-wrapper.dark {
+.app-wrapper.party {
   background-color: #bf94ff;
   color: #e2e7e8;
 }
@@ -50,11 +50,11 @@
     z-index: 100;
   }
   
-  .header-navbar-wrapper.light {
+  .header-navbar-wrapper.cherry {
     background:white;
   }
   
-  .header-navbar-wrapper.dark {
+  .header-navbar-wrapper.party {
        background: linear-gradient(
       to bottom,
       rgba(255, 0, 255, 1) 0%,

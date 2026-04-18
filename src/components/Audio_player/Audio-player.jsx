@@ -8,7 +8,7 @@ import "./Audio-player.css";
 //until div of player grows (offset 2-3 sec)
 //so no elements jump around
 
-//2 make text of track's artists more visible on light bg
+//2 make text of track's artists more visible on bright bg
 
 //3 add onclick change of color of buttons play/pause/next
 //4 add animated fadeoud to sound icon when volume is changed

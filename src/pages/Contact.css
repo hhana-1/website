@@ -8,10 +8,10 @@
     flex-direction: column;
 
 }
-.contact-text.dark {
+.contact-text.party {
     /* color: hsl(124, 44%, 37%); */
 }
-.contact-text.light {
+.contact-text.cherry {
     /* color: hsl(171, 80%, 88%); */
 }
 

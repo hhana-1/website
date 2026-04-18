@@ -21,15 +21,15 @@ function ThemeSwitcher() {
       <div ref={sliderRef} className={`theme-slider ${theme}`}></div>
       
       <button
-        onClick={() => setTheme("light")}
-        className={`theme-button light ${theme === "light" ? "active" : ""}`}
+        onClick={() => setTheme("cherry")}
+        className={`theme-button cherry ${theme === "cherry" ? "active" : ""}`}
       >
         🍒
       </button>
 
       <button
-        onClick={() => setTheme("dark")}
-        className={`theme-button dark ${theme === "dark" ? "active" : ""}`}
+        onClick={() => setTheme("party")}
+        className={`theme-button party ${theme === "party" ? "active" : ""}`}
       >
         🎉
       </button>

@@ -38,7 +38,7 @@ function Header() {
     width: isMobile ? "100%" : "auto",
     }}>
       <img
-        src={theme === "dark" ? "/HH_c_logo.png" : "/namelogo.PNG"}
+        src={theme === "party" ? "/HH_c_logo.png" : "/namelogo.PNG"}
         alt="Logo"
         onClick={()=> navigate("/")}
         style={{

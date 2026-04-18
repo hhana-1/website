@@ -2,14 +2,14 @@
 
 :root {
   --main-color: #e617ea;
-  --dark-color: #e617ea;
-  --light-color: #292828;
+  --accent-color: #e617ea;
+  --base-color: #292828;
   --gray-color: #655e5e;
   --whatever-color: #ce1072;
-  --player-bg: var(--light-color);
+  --player-bg: var(--base-color);
 }
 
-body.dark .player {
+body.party .player {
   --audio-button-color: rgb(113, 111, 50);
   --audio-button-hover-color: rgb(136, 90, 206);
   --audio-range-track: rgba(30, 241, 234, 0.304);
@@ -19,14 +19,14 @@ body.dark .player {
   --player-bg: #bf94ff;
 }
 
-body.light .player {
+body.cherry .player {
   --audio-button-color: rgba(255, 255, 255, 0.374);
   --audio-button-hover-color: rgb(207, 207, 207);
   --audio-range-track: rgba(255, 255, 255, 0.795);
   --audio-range-progress: rgba(46, 168, 103, 0.692);
   --minimize-btn-bg: rgba(222, 240, 231, 0.249);
   --minimize-btn-icon: var(--audio-button-color);
-  --player-bg: var(--light-color);
+  --player-bg: var(--base-color);
 }
 
 * {
@@ -74,7 +74,7 @@ a, button {
 
 /* Hover effect for better UX */
 .minimize-btn:hover {
-  background:var(--light-color);
+  background:var(--base-color);
   transform: scale(1.1);
   border:1px solid var(--minimize-btn-bg);
 }
@@ -112,12 +112,12 @@ a, button {
   --minimize-btn-bg: rgba(255, 255, 255, 0.6);
 }
 
-body.light .player.minimized {
+body.cherry .player.minimized {
   --minimize-btn-bg: #292828;
   --minimize-btn-icon: rgba(255, 0, 255, 1);
 }
 
-body.dark .player.minimized {
+body.party .player.minimized {
   --minimize-btn-bg: #292828;
   --minimize-btn-icon: var(--audio-button-color);
 }
@@ -159,9 +159,9 @@ body.dark .player.minimized {
 }
 button {
   border: none;
-  outline-color: var(--dark-color);
+  outline-color: var(--accent-color);
   background-color: transparent;
-  color: var(--dark-color);
+  color: var(--accent-color);
 }
 
 button:active,
@@ -186,7 +186,7 @@ button:hover {
 input {
   appearance: none;
   background-color: var(--audio-range-track);
-  outline-color: var(--dark-color);
+  outline-color: var(--accent-color);
  cursor: url('/vintage0pointer.svg'), auto;
   overflow: hidden;
   width: 100%;
@@ -302,17 +302,17 @@ input::-webkit-slider-thumb {
   font-weight: 200;
 }
 
-.name.dark {
+.name.party {
     color: rgba(255, 255, 255, 0.637);
 }
-.artist.dark {
+.artist.party {
     color: rgba(255, 255, 255, 0.32);
 }
 
-.name.light {
+.name.cherry {
     color:rgb(255, 255, 255);
 }
-.artist.light {
+.artist.cherry {
      color:rgba(243, 243, 243, 0.777);
 }
 
@@ -350,11 +350,11 @@ input::-webkit-slider-thumb {
   font-size: 0.9rem;
 }
 
-body.dark .seek-bar:hover {
+body.party .seek-bar:hover {
   box-shadow: 0 0 3px rgb(255, 0, 195);
 }
 
-body.light .seek-bar:hover {
+body.cherry .seek-bar:hover {
   box-shadow: 0 0 3px greenyellow;
 }
 .duration{
@@ -384,11 +384,11 @@ body.light .seek-bar:hover {
   border-radius: 6px;
   width:66px;
 }
-body.dark .volume-bar:hover {
+body.party .volume-bar:hover {
   box-shadow: 0 0 3px rgb(255, 0, 195);
 }
 
-body.light .volume-bar:hover {
+body.cherry .volume-bar:hover {
   box-shadow: 0 0 3px greenyellow;
 }
 .audio-controls {
