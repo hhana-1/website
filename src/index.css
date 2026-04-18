@@ -1,0 +1,67 @@
+
+* {box-sizing: border-box;
+  margin:0; padding:0;
+  /* font-family:  Arial, Helvetica, sans-serif, sans-serif; */
+}
+body {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  /* color: hsl(0, 0%, 27%); */
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  cursor: url('/vintage0cursor.svg'), auto;
+}
+
+a { cursor: url('/vintage0pointer.svg'), auto; }
+button { cursor: url('/vintage0pointer.svg'), auto; }
+.quicksand {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h1 {
+  /* font-family: "Special Elite", system-ui; */
+  /* font-family: "Quicksand", sans-serif; */
+  font-family: "Special Elite", system-ui;
+  text-align: center;
+  font-size:23px;
+  
+
+}
+@media (max-width: 768px){
+  .container01 {
+    padding: 0 20px;
+  }
+  h1{ margin-bottom: 30px;}
+}
+@media (min-width: 769px){
+  .container01 {
+    padding:0 45px;
+  }
+  h1{ margin-bottom: 60px;}
+}
+@media (min-width: 1224px){
+  .container01 {
+    padding:0 9vw;
+  }
+}
+
+.page .dark
+{
+ height: 100%;
+ width:100%;
+ background-color: #b5e212;
+ z-index: -1;
+}
+
+.container01 {
+/* background-color: rgb(255, 255, 255); */
+margin: 32px 0;
+width:100vw;
+display: flex;
+flex-direction: column;
+
+}

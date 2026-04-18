@@ -1,0 +1,75 @@
+@font-face {
+  font-family: "HanaWiggle";
+  src: url("./illu_typ/HanaWiggle-Regular.ttf");
+}
+.font{
+  position:relative;
+  right:0%;
+  top:60vh;
+
+}
+.HanaWiggle {
+  font-family: "HanaWiggle", sans-serif;
+  font-size:2em;
+ 
+
+
+}
+
+/* .type-illu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+} */
+
+   .setit-together {
+    position: relative;
+    width: 50%;
+    max-width: 800px;
+  }
+  
+.setit-together {
+  transition: transform 0.3s ease;
+  transform-origin: top center;
+}
+
+.setit-together:hover {
+  transform: rotate(5deg);
+}
+
+
+
+  .setit-together img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: auto;
+  }
+  .gold-frame {
+    position: relative;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+  }
+  
+  
+  .img-type-illu {
+
+    display: block;
+    width: 47%;
+    height: auto;
+    margin: 25% 27% auto;
+  }
+
+
+  @media (max-width: 768px) {  
+    .setit-together {
+      width: 100%;
+    }
+   
+  }
+  
