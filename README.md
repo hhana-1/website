@@ -14,4 +14,4 @@ Made with React, HTML, CSS, JavaScript
 \ づ  づ 
 ```
 
-[Dreams333](https://dreams333.com) 
+[Dreams333](https://dreams333.com){target="_blank"}
