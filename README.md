@@ -14,4 +14,6 @@ Made with React, HTML, CSS, JavaScript
 \ づ  づ 
 ```
 
-<a href="https://dreams333.com" target="_blank">Dreams333</a>
+<a href="https://dreams333.com" target="_blank" rel="noopener noreferrer">
+  Dreams333
+</a>
