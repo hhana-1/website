@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
-import "./glitter.css";
+import "./glitter-overlay-top.css";
 
-function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
+function GlitterOverlayTop({ durationMs = 4200, starCount = 34 }) {
   const [visible, setVisible] = useState(true);
   const [fadingOut, setFadingOut] = useState(false);
 
@@ -10,27 +10,21 @@ function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
       Array.from({ length: starCount }, (_, index) => {
         const usePink = index % 2 === 0;
 
-        const color = usePink ? "#fe33ee" : "#00ffff";
-
-        const softColor = usePink
-          ? "rgba(254, 51, 238, 0.62)"
-          : "rgba(0, 255, 255, 0.62)";
-
-        const glowColor = usePink
-          ? "rgba(254, 51, 238, 0.85)"
-          : "rgba(0, 255, 255, 0.85)";
-
         return {
-        id: index,
-        top: `${Math.random() * 100}%`,
-        left: `${Math.random() * 100}%`,
-        delay: `${Math.random() * 0.9}s`,
-        duration: "1.87s",
-        size: "24px",
-        color,
-        softColor,
-        glowColor,
-      };
+          id: index,
+          top: `${4 + Math.random() * 92}%`,
+          left: `${4 + Math.random() * 92}%`,
+          delay: `${Math.random() * 1.1}s`,
+          duration: "1.87s",
+          size: "24px",
+          color: usePink ? "#fe33ee" : "#00ffff",
+          softColor: usePink
+            ? "rgba(254, 51, 238, 0.7)"
+            : "rgba(0, 255, 255, 0.7)",
+          glowColor: usePink
+            ? "rgba(254, 51, 238, 0.86)"
+            : "rgba(0, 255, 255, 0.86)",
+        };
       }),
     [starCount]
   );
@@ -38,7 +32,7 @@ function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
   useEffect(() => {
     const fadeTimer = window.setTimeout(() => {
       setFadingOut(true);
-    }, Math.max(durationMs - 450, 0));
+    }, Math.max(durationMs - 500, 0));
 
     const removeTimer = window.setTimeout(() => {
       setVisible(false);
@@ -55,11 +49,14 @@ function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
   }
 
   return (
-    <div className={`glitter-layer ${fadingOut ? "is-fading" : ""}`} aria-hidden="true">
+    <div
+      className={`glitter-top-layer ${fadingOut ? "is-fading" : ""}`}
+      aria-hidden="true"
+    >
       {stars.map((star) => (
         <span
           key={star.id}
-          className="glitter-star"
+          className="glitter-top-star"
           style={{
             top: star.top,
             left: star.left,
@@ -77,4 +74,4 @@ function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
   );
 }
 
-export default GlitterEffect;
+export default GlitterOverlayTop;
