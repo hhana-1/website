@@ -104,6 +104,20 @@ align-self: flex-start;
   overflow: hidden;
 }
 
+.modal-fade-in {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 3800ms ease-out, visibility 0s linear 3400ms;
+}
+
+.modal-fade-in.is-visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 3200ms ease-out;
+}
+
 .close-modal {
   position: absolute;
   top: 10px;

@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState } from "react";
 import "./glitter.css";
 
-function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
+function GlitterEffect({ durationMs = 3300, starCount = 100 }) {
   const [visible, setVisible] = useState(true);
   const [fadingOut, setFadingOut] = useState(false);
+  const layerFadeOutMs = 900;
 
   const stars = useMemo(
     () =>
@@ -38,7 +39,7 @@ function GlitterEffect({ durationMs = 3500, starCount = 100 }) {
   useEffect(() => {
     const fadeTimer = window.setTimeout(() => {
       setFadingOut(true);
-    }, Math.max(durationMs - 450, 0));
+    }, Math.max(durationMs - layerFadeOutMs, 0));
 
     const removeTimer = window.setTimeout(() => {
       setVisible(false);

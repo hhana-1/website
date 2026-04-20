@@ -4,19 +4,29 @@
   overflow: visible;
   pointer-events: none;
   z-index: 1001;
-  opacity: 1;
-  transition: opacity 0.45s ease-in-out;
+  opacity: 0;
+  animation: glitterLayerWhiteFadeIn 520ms ease-out forwards;
+  transition: opacity 1.2s cubic-bezier(0.3, 0.05, 0.25, 1);
 }
 
 .glitter-layer-white.is-fading {
   opacity: 0;
 }
 
+@keyframes glitterLayerWhiteFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .glitter-star-white {
   position: absolute;
   display: block;
   overflow: visible;
-  animation: glitterPulseWhite 2.6s cubic-bezier(0.42, 0, 0.2, 1) infinite;
+  animation: glitterPulseWhite 3.1s cubic-bezier(0.42, 0, 0.2, 1) infinite;
   transform: translate(-50%, -50%);
   opacity: 0;
   filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.82));
@@ -55,7 +65,7 @@
     transform: translate(-50%, -50%) scale(0.55);
     opacity: 0;
   }
-  16% {
+  24% {
     transform: translate(-50%, -50%) scale(1.18);
     opacity: 1;
   }

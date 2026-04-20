@@ -4,6 +4,7 @@ import "./glitter-white.css";
 function WhiteGlitterEffect({ durationMs = 3500, starCount = 100 }) {
   const [visible, setVisible] = useState(true);
   const [fadingOut, setFadingOut] = useState(false);
+  const layerFadeOutMs = 1200;
 
   const stars = useMemo(
     () =>
@@ -21,7 +22,7 @@ function WhiteGlitterEffect({ durationMs = 3500, starCount = 100 }) {
   useEffect(() => {
     const fadeTimer = window.setTimeout(() => {
       setFadingOut(true);
-    }, Math.max(durationMs - 450, 0));
+    }, Math.max(durationMs - layerFadeOutMs, 0));
 
     const removeTimer = window.setTimeout(() => {
       setVisible(false);

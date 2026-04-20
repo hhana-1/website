@@ -4,6 +4,7 @@ import "./glitter-overlay-top.css";
 function GlitterOverlayTop({ durationMs = 4200, starCount = 34 }) {
   const [visible, setVisible] = useState(true);
   const [fadingOut, setFadingOut] = useState(false);
+  const layerFadeOutMs = 900;
 
   const stars = useMemo(
     () =>
@@ -32,7 +33,7 @@ function GlitterOverlayTop({ durationMs = 4200, starCount = 34 }) {
   useEffect(() => {
     const fadeTimer = window.setTimeout(() => {
       setFadingOut(true);
-    }, Math.max(durationMs - 500, 0));
+    }, Math.max(durationMs - layerFadeOutMs, 0));
 
     const removeTimer = window.setTimeout(() => {
       setVisible(false);
