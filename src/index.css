@@ -13,8 +13,8 @@ body {
   cursor: url('/vintage0cursor.svg'), auto;
 }
 
-a { cursor: url('/vintage0pointer.svg'), auto; }
-button { cursor: url('/vintage0pointer.svg'), auto; }
+a { cursor: url('/vintage0pointer.svg'), pointer; }
+button { cursor: url('/vintage0pointer.svg'), pointer; }
 .quicksand {
   font-family: "Quicksand", sans-serif;
   font-optical-sizing: auto;

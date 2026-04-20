@@ -69,6 +69,12 @@ width: 100%;
     gap: 1.5em;
     margin-top: 38px;
 }
+
+.social-icons-container a,
+.social-icons-container .social-icon {
+    cursor: url('/vintage0pointer.svg'), pointer;
+}
+
 .social-icon {
     width: 3em;
     height: auto;

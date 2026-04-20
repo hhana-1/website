@@ -36,8 +36,9 @@ body.cherry .player {
   font-family: "Gabarito", sans-serif;
 }
 
-a, button {
-  cursor: url('./vintage0pointer.svg'), auto;
+.player a,
+.player button {
+  cursor: url('/vintage0pointer.svg'), pointer;
 }
 /*minimize*/
 
@@ -155,7 +156,7 @@ body.party .player.minimized {
 {
   font-size: 1.2rem;
   /* display: flex; */
-  cursor: url('/vintage0pointer.svg'), auto;
+  cursor: url('/vintage0pointer.svg'), pointer;
 }
 button {
   border: none;
@@ -187,7 +188,7 @@ input {
   appearance: none;
   background-color: var(--audio-range-track);
   outline-color: var(--accent-color);
- cursor: url('/vintage0pointer.svg'), auto;
+ cursor: url('/vintage0pointer.svg'), pointer;
   overflow: hidden;
   width: 100%;
 }
