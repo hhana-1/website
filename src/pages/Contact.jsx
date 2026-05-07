@@ -26,7 +26,7 @@ function ContactPage() {
   <div className={`contact-text ${theme}`}>
     <p > Hello HELLO.
       Thank you for showing interest in my work.
-      This here is me. Hana Hulic. The best way to contact me is by email.
+      This here is me. Hana Hulic. If you want to contact me, I'm sure you can find a way.
       I've been everywhere and done everything. I also developed this website.
     </p>
     <p>Definitely want to write more code. Work on fonts. Research anatomy of flowers. Make a poster here or there, brochure & digital layout.</p>

@@ -83,7 +83,7 @@ align-self: flex-start;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
   font-family: "DM Sans", sans-serif;
 }
 
@@ -100,7 +100,7 @@ align-self: flex-start;
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   position: relative;
-  z-index: 1002;
+  z-index: 10001;
   overflow: hidden;
 }
 
@@ -118,6 +118,46 @@ align-self: flex-start;
   transition: opacity 3200ms ease-out;
 }
 
+/* Mobile view - full screen modal */
+@media (max-width: 768px) {
+  .modal {
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    border-radius: 0;
+    padding: 50px 20px 20px 20px;
+    overflow-y: auto;
+    z-index: 10001;
+  }
+
+  .modal > h3 {
+    margin-top: 0;
+  }
+
+  .close-modal {
+    z-index: 10002;
+  }
+
+  .carousel-btn,
+  .carousel-btn-prev,
+  .carousel-btn-next {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  .modal-project-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    object-fit: contain;
+  }
+
+  .carousel-image-wrapper {
+    width: 100%;
+  }
+}
+
 .close-modal {
   position: absolute;
   top: 10px;
@@ -131,6 +171,10 @@ align-self: flex-start;
 
 .modal > h3 {
   margin-bottom:20px;
+}
+
+.modal > p {
+  font-weight: 400;
 }
 
 .visit-project-link, .view-project-link  {
@@ -150,7 +194,62 @@ align-self: flex-start;
   width: 100%;
   max-width: 23em;
   margin-bottom:20px;
-  height: 360px;
+  height: 500px;
   object-fit: cover;
   object-position: center;
+}
+
+.carousel-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.carousel-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.carousel-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(220, 60, 226);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  transform: scale(1.2);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(220, 60, 226, 0.4);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.indicator.active {
+  background-color: rgb(220, 60, 226);
 }
