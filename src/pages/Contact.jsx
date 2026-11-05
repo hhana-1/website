@@ -1,6 +1,6 @@
 import "./Contact.css";
 import { useTheme } from "../context/ThemeContext";
-import { useViewTransitionState } from "react-router-dom";
+import ContactForm from "../components/ContactForm";
 function ContactPage() {
   const socialLinks = [
     { name: "github", url: "https://github.com/hhana-1" },
@@ -24,23 +24,19 @@ function ContactPage() {
     />
       <div className='contact-right'>
   <div className={`contact-text ${theme}`}>
-    <p > Hello HELLO.
-      Thank you for showing interest in my work.
-      This here is me. Hana Hulic. If you want to contact me, I'm sure you can find a way.
-      I've been everywhere and done everything. I also developed this website.
+    <p > Hello and Welcome to my corner of the Internet.
     </p>
-    <p>Definitely want to write more code. Work on fonts. Research anatomy of flowers. Make a poster here or there, brochure & digital layout.</p>
-    <p>I want to do more like more commercial work, more collaborations.</p>
-        <p>I'm a big fan of reciprocity, fruit juice, grounding, sound of wawes, exciting activities, discovering new places, sea food, healthy deserts, comfy fits, thinking, salsa and tango dancing with non-creepy people, being healthy. I wouldn't mind making some music along the way.</p>
-    <p>If you have a project that you think I would be a good fit for, do reach out. My interests are wide.
-    
-    I want to learn how to make a dashboard for a user to upload things on their website; aka more back and forth between front-end and back-end.
-    I want to learn how to make a webshop and integrate payments. Send more data to databases using MongoDB.</p>
-    <p>I speak English, French, Balkan languages aka Serbian, Bosnian, Croatian, Montenegrin.</p>
-
+    <p>I'm a full-stack developer focused on software architecture, resilient event-driven systems, and clean system boundaries. Specializing in scaling applications and integrating AI infrastructure (LLMs, tokenization, encoding).</p>
+    <p>I speak English, French, Serbian, Bosnian, Croatian, Montenegrin and Dutch.</p>
+     <p>Need a website? Write me a message.</p>
+    <p>There's a Contact format the bottom of the page.</p>
+    <p>My active hobbies are tango, salsa, rollerblading, embroidery, chess. Regarding passive hobbies those are watching Youtube videos, and random TV shows like Family Dad at the moment. </p>
 
 </div>
 
+    <ContactForm />
+          </div>
+    </div>
 
     <div className='social-icons-container'>
             {socialLinks.map((link) => (
@@ -53,8 +49,6 @@ function ContactPage() {
               </a>
             ))}
           </div>
-          </div>
-    </div>
     </div>
     </div>
   );

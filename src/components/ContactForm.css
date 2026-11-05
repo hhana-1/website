@@ -1,0 +1,86 @@
+/* Colors use currentColor so the form follows both the cherry and party themes */
+/* Fills the text column so its edges line up with the text above */
+.contact-form-section {
+  width: 100%;
+  margin-top: 48px;
+}
+
+.contact-form-section h2 {
+  font-family: "Special Elite", system-ui;
+  font-size: 21px;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 12px;
+  padding: 10px 14px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+.contact-form input:focus-visible,
+.contact-form textarea:focus-visible,
+.contact-form button:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.contact-form button {
+  align-self: center;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1.5px solid currentColor;
+  border-radius: 999px;
+  padding: 10px 32px;
+  transition: background-color 0.2s;
+}
+
+.contact-form button:hover:not(:disabled) {
+  background-color: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.contact-form button:disabled {
+  opacity: 0.6;
+}
+
+.contact-form-botcheck {
+  display: none;
+}
+
+.contact-form-captcha {
+  display: flex;
+  justify-content: center;
+  min-height: 78px; /* reserve the widget's height so the button doesn't jump */
+}
+
+.contact-form-status {
+  text-align: center;
+}
+
+.contact-form-status:empty {
+  display: none;
+}

@@ -66,8 +66,8 @@ width: 100%;
 .social-icons-container {
     display: flex;
     justify-content: center;
-    gap: 1.5em;
-    margin-top: 38px;
+    gap: 2.5em;
+    margin-top: 56px;
 }
 
 .social-icons-container a,
@@ -76,7 +76,7 @@ width: 100%;
 }
 
 .social-icon {
-    width: 3em;
+    width: 2em;
     height: auto;
 }
 @media (min-width: 450px){ 
