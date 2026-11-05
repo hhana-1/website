@@ -81,6 +81,16 @@
   text-align: center;
 }
 
+/* Two reds so the text stays readable on both theme backgrounds */
+.contact-form-captcha-error {
+  color: #c8102e;
+  text-align: center;
+}
+
+body.party .contact-form-captcha-error {
+  color: #7a0000;
+}
+
 .contact-form-status:empty {
   display: none;
 }

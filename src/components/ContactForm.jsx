@@ -13,6 +13,7 @@ function ContactForm() {
   const [status, setStatus] = useState("idle"); // idle | sending | success | error
   const [errorMessage, setErrorMessage] = useState("");
   const [captchaToken, setCaptchaToken] = useState("");
+  const [showCaptchaError, setShowCaptchaError] = useState(false);
   const captchaRef = useRef(null);
 
   function resetCaptcha() {
@@ -24,8 +25,8 @@ function ContactForm() {
     event.preventDefault();
 
     if (!captchaToken) {
-      setStatus("error");
-      setErrorMessage("Please complete the captcha before sending.");
+      setStatus("idle");
+      setShowCaptchaError(true);
       return;
     }
 
@@ -96,11 +97,20 @@ function ContactForm() {
             ref={captchaRef}
             sitekey={HCAPTCHA_SITE_KEY}
             reCaptchaCompat={false}
-            onVerify={(token) => setCaptchaToken(token)}
+            onVerify={(token) => {
+              setCaptchaToken(token);
+              setShowCaptchaError(false);
+            }}
             onExpire={() => setCaptchaToken("")}
             onError={() => setCaptchaToken("")}
           />
         </div>
+
+        {showCaptchaError && (
+          <p className="contact-form-captcha-error" role="alert">
+            Please confirm check you are a human being.
+          </p>
+        )}
 
         <button type="submit" disabled={status === "sending"}>
           {status === "sending" ? "Sending..." : "Send"}
