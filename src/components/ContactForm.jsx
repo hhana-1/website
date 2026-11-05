@@ -108,7 +108,7 @@ function ContactForm() {
 
         {showCaptchaError && (
           <p className="contact-form-captcha-error" role="alert">
-            Please confirm check you are a human being.
+            Please confirm that you are a human being.
           </p>
         )}
 
