@@ -16,7 +16,7 @@
   .navbar ul {
     list-style: none;
     display: flex;
-    gap: 3vw;
+    gap: 2.5vw;
     margin: 0;
     padding: 0;
     /* border:1px solid grey; */
@@ -28,7 +28,7 @@
    .navbar ul li a:active {
     color: #313838;
     text-decoration: none;
-    padding: 8px 12px;
+    padding: 0px 12px;
     font-size: 14px;
     font-weight: 400;
     /* font-family: "Special Elite", system-ui; */

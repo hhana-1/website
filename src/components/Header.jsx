@@ -45,7 +45,7 @@ function Header() {
           width: getLogoWidth(),
           minWidth: "100px",
           height: "auto",
-          padding: "3% 0",
+          padding: isMobile ? "3% 0" : "0",
           cursor: "url('/vintage0pointer.svg'), pointer",
           marginTop: isMobile ? "20px" : "0px",
         }}

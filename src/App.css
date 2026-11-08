@@ -39,8 +39,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 6px;
-  min-height: 120px;
+}
+
+.header-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px 5vw;
 }
 
 @media (min-width: 769px) {
@@ -48,6 +55,11 @@
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+
+  /* desktop header height = logo height + this top/bottom padding */
+  .header-navbar-inner {
+    padding: 10px 5vw;
   }
   
   .header-navbar-wrapper.cherry {
