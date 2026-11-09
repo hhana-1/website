@@ -68,7 +68,22 @@
   .navbar.party ul li a:active {
     color: #ffffff;
   }
-  
+
+  /* Old school hover colors: classic hyperlink blue on white, 90s yellow on magenta */
+  .navbar ul li a {
+    transition: color 0.2s ease;
+  }
+
+  .navbar.cherry ul li a:hover,
+  .navbar.cherry ul li a:focus-visible {
+    color: #0000ee;
+  }
+
+  .navbar.party ul li a:hover,
+  .navbar.party ul li a:focus-visible {
+    color: #ffff00;
+  }
+
   .menu-toggle {
     display: none;
   }

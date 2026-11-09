@@ -179,10 +179,15 @@
 
 
    
+/* Keep the flower and text in normal flow (not position: absolute) so the
+   page, and its background, grows to fit them. */
+.emb-cont-div {
+    position: relative;
+    height: auto;
+}
+
 .emb-text1 {
-    position:absolute;
     font-weight: 200;
-    padding: 24%;
-    margin-top: 400px;
+    width: min(52vw, 800px);
 }
 }

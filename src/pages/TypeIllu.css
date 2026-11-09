@@ -49,8 +49,11 @@
     left: 0;
     height: auto;
   }
-  .gold-frame {
+  /* Must beat ".setit-together img" above: the frame stays in normal flow so
+     the page grows to fit it; only the illustration is layered on top. */
+  .setit-together .gold-frame {
     position: relative;
+    display: block;
     width: 100%;
     height: auto;
     pointer-events: none;

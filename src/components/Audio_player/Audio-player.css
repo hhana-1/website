@@ -107,6 +107,9 @@ body.cherry .player {
   position: fixed;
   right: 10px;
   bottom: 20px;
+  /* above page content (e.g. Embroidery's z-index 1-2 decorations), below the
+     mobile menu (1000) and project modal (9999) */
+  z-index: 500;
   /* opacity: 90%; */
   transform-origin: bottom right;
   animation: shrinkIn 0.28s ease-in-out;
@@ -229,6 +232,7 @@ input::-webkit-slider-thumb {
   align-items: center;
     right: 10px;
   bottom: 20px;
+  z-index: 500; /* same reason as .player.minimized */
   transform-origin: bottom right;
   animation: expandIn 0.3s ease-in-out;
 }
