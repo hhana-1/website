@@ -84,12 +84,54 @@ const tracks = [
   },
 ];
 
+// --- "remember where the song stopped" when leaving party mode (kept for 1 hour)
+const SESSION_KEY = "audioPlayerSession";
+const SESSION_MAX_AGE_MS = 60 * 60 * 1000; // 1 hour
+
+function saveSession(session) {
+  try {
+    localStorage.setItem(SESSION_KEY, JSON.stringify({ ...session, savedAt: Date.now() }));
+  } catch {
+    // storage unavailable (e.g. private mode): just don't remember
+  }
+}
+
+function clearSavedSession() {
+  try {
+    localStorage.removeItem(SESSION_KEY);
+  } catch {
+    // ignore
+  }
+}
+
+// Returns the saved session if it is less than an hour old, and removes it (it is used once)
+function takeSavedSession() {
+  try {
+    const raw = localStorage.getItem(SESSION_KEY);
+    localStorage.removeItem(SESSION_KEY);
+    if (!raw) return null;
+    const session = JSON.parse(raw);
+    const isFresh = Date.now() - session.savedAt < SESSION_MAX_AGE_MS;
+    const isValidTrack = Number.isInteger(session.track) && session.track >= 0 && session.track < tracks.length;
+    return isFresh && isValidTrack ? session : null;
+  } catch {
+    return null;
+  }
+}
+
 function AudioPlayer() {
-  const audioRef = useRef(new Audio());
+  // one Audio object for the player's lifetime (not a new one on every render)
+  const audioRef = useRef(null);
+  if (audioRef.current === null) audioRef.current = new Audio();
+
+  // where the song stopped last time party mode was left (null if none / older than 1 hour)
+  const [savedSession] = useState(takeSavedSession);
+  const pendingSeekRef = useRef(savedSession ? savedSession.time : null);
 
   const [isMinimized, setIsMinimized] = useState(false);
-  const [activeTrack, setActiveTrack] = useState(0);
-  const [initPlay, setInitPlay] = useState(false);
+  const [activeTrack, setActiveTrack] = useState(savedSession ? savedSession.track : 0);
+  const [initPlay, setInitPlay] = useState(savedSession ? savedSession.wasPlaying : false);
+  const activeTrackRef = useRef(activeTrack);
   const [isPlaying, setIsPlaying] = useState(false);
   const [seek, setSeek] = useState(0);
   const [volume, setVolume] = useState(4);
@@ -104,10 +146,44 @@ function AudioPlayer() {
   // load track
   useEffect(() => {
     const audio = audioRef.current;
+    activeTrackRef.current = activeTrack;
     audio.src = tracks[activeTrack].path;
 
-    if (initPlay) audio.play();
+    // back in party mode: jump to the second where the song stopped
+    let seekToSavedTime = null;
+    if (pendingSeekRef.current !== null) {
+      const time = pendingSeekRef.current;
+      seekToSavedTime = () => {
+        audio.currentTime = time;
+        pendingSeekRef.current = null;
+      };
+      audio.addEventListener("loadedmetadata", seekToSavedTime, { once: true });
+    }
+
+    if (initPlay) audio.play().catch(() => {}); // may be blocked until the visitor interacts
+
+    return () => {
+      if (seekToSavedTime) audio.removeEventListener("loadedmetadata", seekToSavedTime);
+    };
   }, [activeTrack]);
+
+  // the real volume always follows the slider (0-50), including mute / unmute
+  useEffect(() => {
+    audioRef.current.volume = volume / 50;
+  }, [volume]);
+
+  // leaving party mode (player removed): remember where the song stopped, then stop the music
+  useEffect(() => {
+    const audio = audioRef.current;
+    clearSavedSession(); // in development, React test-unmounts once; drop what that saved
+    return () => {
+      const wasPlaying = !audio.paused;
+      if (wasPlaying || audio.currentTime > 0) {
+        saveSession({ track: activeTrackRef.current, time: audio.currentTime, wasPlaying });
+      }
+      audio.pause();
+    };
+  }, []);
 
   // audio events
   useEffect(() => {
@@ -125,8 +201,6 @@ function AudioPlayer() {
     const onPlay = () => setIsPlaying(true);
     const onPause = () => setIsPlaying(false);
     const onEnded = nextTrack;
-
-    audio.volume = volume / 50;
 
     audio.addEventListener("timeupdate", onTimeUpdate);
     audio.addEventListener("loadedmetadata", onLoadedMetadata);
@@ -148,6 +222,9 @@ function AudioPlayer() {
 
 //this code snippet to unlock audio on user interaction izi peasy
   useEffect(() => {
+    // a song restored as paused stays paused until the visitor presses play
+    if (savedSession && !savedSession.wasPlaying) return;
+
     const unlockAudio = () => {
       const audio = audioRef.current;
       audio.muted = false; 
@@ -171,7 +248,7 @@ function AudioPlayer() {
       window.removeEventListener("click", unlockAudio);
       window.removeEventListener("keydown", unlockAudio);
     };
-  }, []); // Empty array ensures this only runs once on mount
+  }, [savedSession]); // savedSession never changes, so this runs once on mount
 
 
   // controls
@@ -204,9 +281,7 @@ function AudioPlayer() {
   };
 
   const handleVolume = (e) => {
-    const value = e.target.value;
-    audioRef.current.volume = value / 100;
-    setVolume(value);
+    setVolume(Number(e.target.value)); // the volume effect applies it to the audio
   };
 
   const toggleMute = () => {

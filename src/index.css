@@ -13,6 +13,11 @@ body {
   cursor: url('/vintage0cursor.svg'), auto;
 }
 
+/* full page width (without the scrollbar), so 100% widths inside it fit exactly */
+#root {
+  width: 100%;
+}
+
 a { cursor: url('/vintage0pointer.svg'), pointer; }
 button { cursor: url('/vintage0pointer.svg'), pointer; }
 .quicksand {
@@ -60,7 +65,7 @@ h1 {
 .container01 {
 /* background-color: rgb(255, 255, 255); */
 margin: 32px 0;
-width:100vw;
+width:100%; /* not 100vw: that includes the scrollbar and makes the page scroll sideways */
 display: flex;
 flex-direction: column;
 

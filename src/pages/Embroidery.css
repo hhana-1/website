@@ -92,11 +92,30 @@
 @media (max-width: 768px){
 
 
+    /* Text uses the full width (up to a comfortable reading width).
+       hyphens: auto avoids big gaps between words in justified text. */
     .emb-text1{
-    margin:140px 0 20px 0;
+    width: min(100%, 600px);
+    margin: 0 0 20px 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.55;
     font-weight: 400;
-    padding: 5%;
-    text-align:justify;
+    text-align: justify;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    }
+
+    /* bottom space so the last lines can be scrolled up past the fixed theme
+       switcher (its top is ~322px above the bottom of the screen) and the music player */
+    .emb-div {
+    gap: 0;
+    padding-bottom: 280px;
+    }
+
+    .emb-cont-div-cpy {
+    width: 100%;
+    padding: 0;
     }
 
 
@@ -135,15 +154,17 @@
     right:-28px;
 } */
 
+/* flower in normal flow, so the text sits right below it (no spacer margin needed) */
 .emb-cont-div {
-
-    width:90vw;
-   
+    position: relative;
+    width: 100%;
+    height: auto;
 }
 
   }
-  
-  @media (min-width: 768px){
+
+  /* 769px, not 768px: at exactly 768px both this and the mobile rules applied at once */
+  @media (min-width: 769px){
 
 
 .griddy {  width: 80vw;
@@ -188,6 +209,6 @@
 
 .emb-text1 {
     font-weight: 200;
-    width: min(52vw, 800px);
+    width: min(100%, 1000px); /* fills its box, up to 1000px */
 }
 }

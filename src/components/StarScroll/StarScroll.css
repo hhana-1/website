@@ -1,0 +1,6 @@
+/* Square box the star is drawn into; set its width from the outside */
+.star-scroll {
+  width: 100%;
+  aspect-ratio: 1;
+  pointer-events: none;
+}

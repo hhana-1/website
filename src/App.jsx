@@ -35,7 +35,8 @@ function AppContent() {
         </Routes>
       </Router>
 
-      <AudioPlayer />
+      {/* music only in party mode; leaving it remembers where the song stopped (1 hour) */}
+      {theme === "party" && <AudioPlayer />}
     </div>
   );
 }

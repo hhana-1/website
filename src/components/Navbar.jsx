@@ -9,12 +9,19 @@ function Navbar() {
 
   return (
     <nav className={`navbar ${theme}`}>
-      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
-        <span className={`icon ${isOpen ? "fade-out" : "fade-in"}`}>☰</span>
-        <span className={`icon ${isOpen ? "fade-in" : "fade-out"}`}>✖</span>
-
+      <button
+        className={`menu-toggle ${isOpen ? "is-open" : ""}`}
+        onClick={() => setIsOpen(!isOpen)}
+        aria-label={isOpen ? "Close menu" : "Open menu"}
+        aria-expanded={isOpen}
+        aria-controls="main-menu"
+      >
+        {/* three lines that morph into an X when open */}
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
+        <span className="menu-toggle-bar" />
       </button>
-      <ul className={`nav-links ${isOpen ? "open" : ""} ${theme}`}>
+      <ul id="main-menu" className={`nav-links ${isOpen ? "open" : ""} ${theme}`}>
         <li><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
         <li><Link to="/typography_illustration" onClick={() => setIsOpen(false)}>Type & Illu</Link></li>
         <li><Link to="/embroidery" onClick={() => setIsOpen(false)}>Embroidery</Link></li>

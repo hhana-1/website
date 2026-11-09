@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossy star – scroll demo</title>
+  <style>
+    :root { --ink: #3b2a44; --muted: #7d6a86; --bg: #ffffff; --accent: #b48ac8; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font: 18px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; color: var(--ink); background: var(--bg); }
+
+    /* The star: a fixed box on the right. Size/position it however your layout needs. */
+    .star {
+      position: fixed; top: 50%; right: 4vw; transform: translateY(-50%);
+      width: min(46vw, 620px); aspect-ratio: 1; pointer-events: none; z-index: 1;
+    }
+
+    section { min-height: 100vh; display: flex; align-items: center; padding: 10vh 6vw; }
+    section:nth-child(even) { background: #faf5fc; }
+    .copy { max-width: min(44vw, 520px); position: relative; z-index: 2; }
+    h1, h2 { line-height: 1.1; margin: 0 0 .5em; letter-spacing: -0.02em; }
+    h1 { font-size: clamp(2.4rem, 5vw, 4.2rem); }
+    h2 { font-size: clamp(1.8rem, 3.4vw, 2.8rem); }
+    p { color: var(--muted); margin: 0 0 1em; }
+    .hint { display: inline-block; margin-top: 1rem; color: var(--accent); font-weight: 600; }
+
+    @media (max-width: 760px) {
+      .star { top: auto; bottom: 2vh; right: 50%; transform: translateX(50%); width: 62vw; opacity: .95; }
+      .copy { max-width: none; }
+      section { align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1) Put this element anywhere on your page … -->
+  <div class="star" data-star-scroll data-turns-per-screen="0.5" aria-hidden="true"></div>
+
+  <main>
+    <section id="s1"><div class="copy">
+      <h1>Scroll to spin the star</h1>
+      <p>The star turns half a revolution for every screen you scroll, and eases into place when you stop.</p>
+      <span class="hint">↓ keep scrolling</span>
+    </div></section>
+    <section id="s2"><div class="copy">
+      <h2>One element, one script</h2>
+      <p>Add an element with <code>data-star-scroll</code>, include <code>star-scroll.js</code> as a module, and keep <code>star.glb</code> next to it.</p>
+    </div></section>
+    <section id="s3"><div class="copy">
+      <h2>Tweak it with attributes</h2>
+      <p><code>data-turns-per-screen</code>, <code>data-axis</code>, <code>data-float</code>, <code>data-twinkle</code>, <code>data-pearl</code>.</p>
+    </div></section>
+    <section id="s4"><div class="copy">
+      <h2>Light on the page</h2>
+      <p>It only renders while it is on screen and the tab is visible, and it respects “reduce motion”.</p>
+    </div></section>
+  </main>
+
+  <!-- 2) … and load the script once, near the end of <body>. -->
+  <script type="module" src="star-scroll.js"></script>
+</body>
+</html>

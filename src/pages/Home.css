@@ -1,0 +1,28 @@
+/* Same size the cherry picture had on desktop; bigger on phones */
+.home-scroll {
+  --star-size: min(48vw, 580px);
+  /* Gives the page room to scroll. The star turns half a turn per screen
+     scrolled, so 300vh (about 2 screens of scrolling) = one full turn. */
+  height: 300vh;
+}
+
+/* Keeps the star centered in the window while the page scrolls past it,
+   but never higher than just below the header */
+.home-star-sticky {
+  position: sticky;
+  top: max(80px, calc((100vh - var(--star-size)) / 2));
+  display: flex;
+  justify-content: center;
+}
+
+/* two classes so this beats the component's default "width: 100%" */
+.home-star-sticky .home-star {
+  width: var(--star-size);
+  min-width: 100px;
+}
+
+@media (max-width: 768px) {
+  .home-scroll {
+    --star-size: min(80vw, 420px);
+  }
+}
